@@ -1,4 +1,4 @@
-﻿Tutorial Instalação Django
+﻿# Tutorial Instalação Django
 
 1. Preparação  
 Abra um terminal no seu sistema Ubuntu. Você pode fazer isso pressionando Ctrl + Alt + T ou procurando por "Terminal" no menu de aplicativos.

@@ -1,5 +1,5 @@
 # CLASSES 
-1. Em `core -> models.py `  
+1. Em "core -> ``models.py``"
   Crie as classes:  
 
 - Chave   
