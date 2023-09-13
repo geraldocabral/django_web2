@@ -7,16 +7,25 @@ class Chave(models.Model):
     situacao = models.BooleanField('Situação da chave')
     status = models.BooleanField('Status')
 
+    def __str__(self):
+        return self.nome
+
 class Servidor(models.Model):
+    id = models.AutoField
     nome = models.CharField('Nome', max_length=100)
     cpf = models.CharField('CPF',max_length=15)
     contato = models.CharField('Contato do servidor',max_length=15)
     nascimento = models.DateField('Data de Nascimento')
     status = models.BooleanField('Status')
 
+    def __str__(self):
+        return self.nome
+
 class Emprestimo(models.Model):
+    id = models.AutoField
     dataHoraEmprestimo = models.DateTimeField('Hora Emprestimo')
     dataHoraDevolucao = models.DateTimeField('Hora Devolução')
     status = models.BooleanField('Status')
+    
 
 
