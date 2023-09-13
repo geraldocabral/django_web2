@@ -1,5 +1,0 @@
-MIGRATION
-No terminal, estando no diretório do projeto
-    Digite " python manage.py makemigrations" no terminal e aperte enter (lembre-se de estar no diretorio correto)
-    Obs: se a classe não tiver o atributo id, será criado um automaticamente
-Digite "python manage.py migrate" no terminal e aperte enter
