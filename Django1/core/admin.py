@@ -4,7 +4,7 @@ from .models import Chave, Emprestimo, Servidor
 
 
 class EmprestimoAdmin(admin.ModelAdmin):
-    list_display = ('dataHoraEmprestimo', 'dataHoraDevolucao')
+    list_display = ('chaveEmprestada' ,'dataHoraEmprestimo', 'dataHoraDevolucao')
 
 class ChaveAdmin(admin.ModelAdmin):
     list_display = ('nome', 'situacao')
