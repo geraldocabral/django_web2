@@ -6,5 +6,40 @@
     </head>
     <body>
         <h1> Index </h1>
+        
+        <h2> Chaves </h2>
+        {% for chave in chaves %}
+            <p> {{ chave }} </p>
+        {% endfor %}
+        
+        <h2> Servidores </h2>
+        {% for servidor in servidores %}
+            <p> {{ servidor }} </p>
+        {% endfor %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Chave</th>
+                    <th>Servidor Emprestimo</th>
+                    <th>Data de emprestimo</th>
+                    <th>Servidor Devolução</th>
+                    <th>Data de devolução</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            {% for emprestimo in emprestimos %}
+                <tr>
+                    <td>{{ emprestimo.chaveEmprestada }}</td>
+                    <td>{{ emprestimo.servidorEmprestimo }}</td>
+                    <td>{{ emprestimo.dataHoraEmprestimo }}</td>
+                    <td>{{ emprestimo.servidorDevolucao }}</td>
+                    <td>{{ emprestimo.dataHoraDevolucao }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+
+        </table>
     </body>
 </html>

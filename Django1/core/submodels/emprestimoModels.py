@@ -29,4 +29,5 @@ class Emprestimo(models.Model):
     servidorEmprestimo = models.ForeignKey(Servidor, on_delete=models.CASCADE, to_field='id', related_name='servidorEmprestimo')
     servidorDevolucao = models.ForeignKey(Servidor, on_delete=models.CASCADE, to_field='id', related_name='servidorDevolucao', null=True, blank=True)
 
-
+    def __str__(self):
+        return self.chaveEmprestada.nome + ' | ' + self.servidorEmprestimo.nome

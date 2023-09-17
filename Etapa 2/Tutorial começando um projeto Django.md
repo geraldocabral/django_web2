@@ -22,7 +22,15 @@
         }
     }
     ````
+1. Outros
+    1. Em `settings.py`
+        ``` python
+        LANGUAGE_CODE = 'pt-br'
 
+        TIME_ZONE = 'America/Sao_Paulo'
+
+        
+        ```
 
 ## Tutorial criação de um aplicativo Django
 1. Criar um Aplicativo
