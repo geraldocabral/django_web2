@@ -2,4 +2,9 @@ from django.db import models
 
 
 #import submodels
-from .submodels.emprestimoModels import Emprestimo, Chave, Servidor
+
+
+# Import serico de emprestim ode chave
+from .submodels.chaveModels import Chave
+from .submodels.servidorModels import Servidor
+from .submodels.emprestimoModels import Emprestimo
