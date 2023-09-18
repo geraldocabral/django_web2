@@ -14,7 +14,9 @@
         
         <h2> Servidores </h2>
         {% for servidor in servidores %}
-            <p> {{ servidor }} </p>
+            <p> <a href="{% url 'servidor' servidor.id %}">
+
+            {{ servidor }} </a> </p>
         {% endfor %}
         <table>
             <thead>
@@ -31,9 +33,20 @@
             {% for emprestimo in emprestimos %}
                 <tr>
                     <td>{{ emprestimo.chaveEmprestada }}</td>
-                    <td>{{ emprestimo.servidorEmprestimo }}</td>
+                    <td> <a href="{% url 'servidor' emprestimo.servidorEmprestimo.id %}">
+                        {{emprestimo.servidorEmprestimo }}</a></td>
                     <td>{{ emprestimo.dataHoraEmprestimo }}</td>
-                    <td>{{ emprestimo.servidorDevolucao }}</td>
+                    {% if emprestimo.servidorDevolucao.id %}
+                        <td><a href="{% url 'servidor' emprestimo.servidorDevolucao.id %}">
+                            {{ emprestimo.servidorDevolucao }}</a></td>
+                        {% else %}
+                            <td>  não devolvido </td>
+                    {% endif %}
+
+                    
+                    
+                    
+                    
                     <td>{{ emprestimo.dataHoraDevolucao }}</td>
                 </tr>
             {% endfor %}

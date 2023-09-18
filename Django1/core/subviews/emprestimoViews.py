@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from core.submodels.emprestimoModels import Emprestimo
+from submodels.emprestimoModels import Emprestimo
 
-def emprestimo(request):
+def emprestimos(request):
     emprestimos = Emprestimo.objects.all()
     context = {
         'emprestimos': emprestimos,
