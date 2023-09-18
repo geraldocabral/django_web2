@@ -4,7 +4,7 @@ from .servidorModels import Servidor
 
 # Create your models here.
 class Emprestimo(models.Model):
-    id = models.AutoField
+    id = models.BigAutoField
     dataHoraEmprestimo = models.DateTimeField('Hora Emprestimo')
     dataHoraDevolucao = models.DateTimeField('Hora Devolução', null=True, blank=True)
     status = models.BooleanField('Status', default=True)
