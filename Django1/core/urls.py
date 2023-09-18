@@ -7,5 +7,5 @@ from .subviews.servidorViews import servidor, servidores
 urlpatterns = [
     path('',index),
     path('outro',outro),
-    path('servidor/<int:id>',servidor, name='servidor'),
+    path('servidor/<int:id>',servidor, name='servidorPorId'),
 ]
