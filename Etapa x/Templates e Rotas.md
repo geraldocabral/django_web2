@@ -72,3 +72,4 @@
         ```
 1. Iniciar o Servidor de Desenvolvimento para verificar se tudo esta funcionando corretamente.  
    >``python manage.py runserver``
+

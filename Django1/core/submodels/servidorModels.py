@@ -1,7 +1,7 @@
 from django.db import models
 
 class Servidor(models.Model):
-    id = models.AutoField
+    id = models.BigAutoField
     nome = models.CharField('Nome', max_length=100)
     cpf = models.CharField('CPF',max_length=15)
     contato = models.CharField('Contato do servidor',max_length=15)

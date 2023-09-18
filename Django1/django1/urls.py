@@ -21,3 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('core.urls')),
 ]
+
+LOGOUT_REDIRECT_URL = 'index'
