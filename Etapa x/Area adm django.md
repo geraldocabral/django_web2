@@ -18,7 +18,7 @@ Agora em localhost:8000/admin teremos acesso a area administrativa do django
             admin.site.register(Emprestimo)
             admin.site.register(Servidor)
         ```
-    1. Verifique se a aplicação esta rodando corretamente, e enrtre em localhost:8000/admin
+    1. Verifique se a aplicação esta rodando corrPPetamente, e enrtre em localhost:8000/admin
 
 1. Em "core -> `models.py`"
     1. Criar dentro das classes ``Sevidor`` e ``Chave`` a seguinte função:

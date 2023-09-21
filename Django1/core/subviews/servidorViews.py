@@ -19,11 +19,11 @@ def servidor(request, id):
 
 def servidorPost(request):
     if request.method == 'POST':
-        nome = request.POST.get('nome')
-        cpf = request.POST.get('cpf')
-        contato = request.POST.get('contato')
-        nascimento = request.POST.get('nascimento')
-        status = True
-        
-        servidor.save()
+        servidorNovo = Servidor()
+        servidorNovo.nome = request.POST.get('nome')
+        servidorNovo.cpf = request.POST.get('cpf')
+        servidorNovo.contato = request.POST.get('contato')
+        servidorNovo.nascimento = request.POST.get('nascimento')
+        servidorNovo.status = True
+        servidor.save(servidorNovo)
     return render(request, 'servidorPost.html')
