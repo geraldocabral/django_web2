@@ -6,4 +6,4 @@ def chaves(request):
     context = {
         'chaves': chaves,
     }
-    return render(request, 'chave.html', context)
+    return render(request, 'chaves.html', context)

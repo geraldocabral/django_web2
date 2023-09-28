@@ -17,3 +17,15 @@ def index (request):
 
 def outro(request):
     return render(request, 'outro.html')
+
+
+
+def chaves(request):
+    chaves = Chave.objects.all()
+
+    context = {
+        'chaves' : chaves
+    }
+    
+    return render(request, 'chaves.html', context)
+

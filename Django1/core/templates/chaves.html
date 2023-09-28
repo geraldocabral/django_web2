@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chaves</title>
+</head>
+<body >
+    <table style="display: flex; justify-content: center; margin-top: 250px; ">
+        <tr>
+            <th style="border-style: groove; width: 250px; background-color: lightgray;"><h1>Chaves</h1></th>
+        </tr>
+        <tr>
+            <th style="border-style: groove; font-size: large;">
+                {% for chave in chaves %}
+                    <p> {{ chave }} </p>
+                {% endfor %}
+            </th>
+        </tr>
+    </table>
+</body>
+    
+        
+</html>
+        
+        
