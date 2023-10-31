@@ -14,7 +14,9 @@
 
     Abra o arquivo `settings.py` dentro do diretório "meuprojeto" e vá até a seção `DATABASES` se quiser modificar e configurar as informações de conexão com o banco de dados. Por padrão:
 
+    
     ```` python
+    import os
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',  # Use SQLite por padrão
@@ -37,7 +39,7 @@
 
 
     Os projetos Django podem ser compostos por vários aplicativos. Um aplicativo é uma parte específica de funcionalidade em seu projeto. Vamos criar um aplicativo chamado "core":
-
+    NA PASTA EM QUE FOI CRIADO O PROJETO Django
     >``django-admin startapp core``
 
 1. Em "django1 -> `setting.py` " 
