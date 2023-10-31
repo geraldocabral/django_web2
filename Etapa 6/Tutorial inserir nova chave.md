@@ -1,4 +1,4 @@
-3 Criar um arquivo forms para receber os dados da chave a ser inserida
+3 Criar um arquivo formChave para receber os dados da chave a ser inserida dentro de core, de preferencia dentro de uma pasta exclusiva para forms
 
 1. Fazer as importações necessárias
 
