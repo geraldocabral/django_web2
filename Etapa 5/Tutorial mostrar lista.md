@@ -6,7 +6,7 @@
 
 from .models import Chave
 
-2. Após isso definimos a requisição que será feita a busca das chaves existentes
+1. Após isso definimos a requisição que será feita a busca das chaves existentes
 
 -Codigo: 
 
@@ -16,6 +16,23 @@ def chaves(request):
         'chaves': chaves,
     }
     return render(request, 'chave.html', context)
+
+1. agora o index
+
+```
+def index (request):
+    chaves = Chave.objects.all()
+    servidores = Servidor.objects.all()
+    emprestimos = Emprestimo.objects.all()
+
+    context = {
+        'nome': 'Django 1',
+        'chaves': chaves,
+        'servidores': servidores,
+        'emprestimos': emprestimos,
+    }
+    return render(request, 'index.html', context)
+```
 
 
 # Criar o caminho url utilizado para a página de chaves
@@ -30,6 +47,7 @@ path('chaves', chaves)
 1. EM django1
 
 ```
+from .views import chaves, index, outro
 from django.urls import path, include
 
 urlpatterns = [
