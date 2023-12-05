@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Editar Chave</title>
+    </head>
+    <body style="display: flex; align-items: center; flex-direction: column;">
+        <h1>Editar Chave</h1>
+        <br>
+        <form method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; width: 16.8%;">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

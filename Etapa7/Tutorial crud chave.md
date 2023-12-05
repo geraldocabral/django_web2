@@ -1,3 +1,57 @@
+# Criar as views de edição e exclusão
+### Em views.py
+
+1. Criar as def para editar uma chave e para excluir uma chave
+
+```
+def editar_chave(request, id):
+    chave = Chave.objects.get(id=id)
+    if request.method == 'POST':
+        form = formChave(request.POST, instance=chave)
+        if form.is_valid():
+            form.save()
+            return redirect('chaves')  # Redirecione para onde a lista de chaves é exibida
+    else:
+        form = formChave(instance=chave)
+
+    return render(request, 'atualizachave.html', {'form': form})
+
+def excluir_chave(request, id):
+    chave = Chave.objects.get(id=id)
+    chave.status = False
+    print(chave.status)
+    chave.save()
+    return redirect('chaves')
+
+```
+
+# Definir os caminhos utilizados para editar e excluir
+### Arquivo urls.py dentro da pasta core
+
+1. Definir o path editar_chave e excluir_chave.
+
+Os paths ficam dessa maneira:
+
+```
+urlpatterns = [
+    path('',index, name='index'),
+    path('outro',outro),
+    path('servidor/<int:id>',servidor, name='servidorPorId'),
+    path('chaves', chaves, name='chaves'),
+    path('inserechave', inserechave),
+    path('chave/editar/<int:id>/', editar_chave, name='editar_chave'),
+    path('chave/excluir/<int:id>/',excluir_chave, name='excluir_chave'),
+]
+
+```
+
+
+# Alterar o arquivo html que mostra as chaves para adicionar os botões de edição e exclusão.
+### Arquivo chaves.html
+
+1. Adicionar os botões de edição e exlcusão no arquivo html, e adicionar estilos css 
+
+```
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -72,3 +126,42 @@
     
         
 </html>
+
+```
+
+# Criar o arquivo html de editar chave
+### Dentro de templates
+
+1. criar um arquivo com o nome atualizachave.html e usar o seguinte codigo:
+
+```
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Editar Chave</title>
+    </head>
+    <body style="display: flex; align-items: center; flex-direction: column;">
+        <h1>Editar Chave</h1>
+        <br>
+        <form method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; width: 16.8%;">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+```
+
+# Rodar o projeto e acessar a url para verificar o funcionamentp
+### no console dentro de Django1
+
+```
+python manage.py runserver
+
+```
+
+http://127.0.0.1:8000/

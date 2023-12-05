@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Chave, Servidor, Emprestimo
 
 from .forms.formChave import formChave
@@ -23,7 +23,7 @@ def outro(request):
 
 
 def chaves(request):
-    chaves = Chave.objects.all()
+    chaves = Chave.objects.filter(status=True)
 
     context = {
         'chaves' : chaves
@@ -43,3 +43,22 @@ def inserechave(request):
          
     context['form']= form
     return render(request, "create_view.html", context)
+
+def editar_chave(request, id):
+    chave = Chave.objects.get(id=id)
+    if request.method == 'POST':
+        form = formChave(request.POST, instance=chave)
+        if form.is_valid():
+            form.save()
+            return redirect('chaves')  # Redirecione para onde a lista de chaves é exibida
+    else:
+        form = formChave(instance=chave)
+
+    return render(request, 'atualizachave.html', {'form': form})
+
+def excluir_chave(request, id):
+    chave = Chave.objects.get(id=id)
+    chave.status = False
+    print(chave.status)
+    chave.save()
+    return redirect('chaves')
