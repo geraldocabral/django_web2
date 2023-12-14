@@ -36,7 +36,13 @@
     </style>
 </head>
 <body >
-    <table style="display: flex; justify-content: center; margin-top: 250px; ">
+    <form action="{% url 'buscachave' %}" method="get" style="display: flex; justify-content: center; margin-top: 100px;">
+        <input type="text" name="busca" placeholder="Buscar chave" >
+        <button type="submit">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+    <table style="display: flex; justify-content: center; margin-top: 100px; ">
         <tr>
             <th style="border-style: groove; width: 250px; background-color: lightgray;"><h1>Chaves</h1></th>
         </tr>
@@ -65,7 +71,11 @@
     <div class="btn-container">
         <a href="{% url 'index' %}" class="btn">Voltar para página inicial</a>
     </div>
-    
+    {% if message %}
+    <script>
+            alert('{{ message }}');
+    </script>
+    {% endif %}
 </body>
 </html>
 </body>

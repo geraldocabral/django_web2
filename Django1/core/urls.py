@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import chaves, index, outro, editar_chave, excluir_chave
+from .views import chaves, index, outro, editar_chave, excluir_chave, buscachave
 
 from .subviews.servidorViews import servidor, servidores
 from .subviews.insereChaveViews import inserechave
@@ -13,4 +13,5 @@ urlpatterns = [
     path('inserechave', inserechave),
     path('chave/editar/<int:id>/', editar_chave, name='editar_chave'),
     path('chave/excluir/<int:id>/',excluir_chave, name='excluir_chave'),
+    path('buscachave', buscachave, name='buscachave')
 ]

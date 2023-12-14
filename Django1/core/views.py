@@ -62,3 +62,21 @@ def excluir_chave(request, id):
     print(chave.status)
     chave.save()
     return redirect('chaves')
+
+def buscachave(request):
+    busca = ''
+    message = ''
+
+    if 'busca' in request.GET:
+        busca = request.GET['busca']
+        if busca.strip():
+            chave = Chave.objects.filter(nome__icontains=busca, status=True)
+            if not chave:
+                message = 'Nenhuma chave encontrada'
+                chave = Chave.objects.filter(status = True)
+            
+        else:
+            message = 'Campo de busca vazio'
+            chave = Chave.objects.filter(status=True)
+        
+    return render(request, 'chaves.html', {'chaves': chave, 'message': message})    
